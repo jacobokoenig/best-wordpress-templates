@@ -10,6 +10,7 @@ class Template extends Equatable {
   final String thumbnailUrl;
   final String title;
   final String description;
+  final String owner;
   final List<Tag> tags;
 
   Template({
@@ -18,6 +19,7 @@ class Template extends Equatable {
     required this.thumbnailUrl,
     required this.title,
     required this.description,
+    required this.owner,
     required this.tags,
   });
 

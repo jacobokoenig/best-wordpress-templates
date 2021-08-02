@@ -9,6 +9,7 @@ class TemplateModel extends Template {
     required String thumbnailUrl,
     required String title,
     required String description,
+    required String owner,
     required List<Tag> tags,
   }) : super(
           id: id,
@@ -16,6 +17,7 @@ class TemplateModel extends Template {
           thumbnailUrl: thumbnailUrl,
           title: title,
           description: description,
+          owner: owner,
           tags: tags,
         );
 
@@ -26,7 +28,8 @@ class TemplateModel extends Template {
       thumbnailUrl: map['thumbnailUrl'],
       title: map['title'],
       description: map['description'],
-      tags: List<Tag>.from(map['tags']?.map((x) => TagModel.fromMap(x))),
+      owner: map['owner_id'],
+      tags: List<Tag>.from(map['tags']?.map((x) => TagModel(x))),
     );
   }
 }

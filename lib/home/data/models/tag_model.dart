@@ -1,23 +1,10 @@
-import 'package:best_wordpress_sites/core/constants/constants.dart';
 import 'package:best_wordpress_sites/home/domain/entities/tag.dart';
-import 'package:flutter/material.dart';
 
 class TagModel extends Tag {
-  TagModel({
-    String? id,
-    required String title,
-    required Color color,
-  }) : super(
-          id: id,
-          title: title,
-          color: color,
-        );
+  TagModel(String id) : super(id);
 
   factory TagModel.fromMap(Map<String, dynamic> map) {
-    return TagModel(
-      id: map['id'],
-      title: map['title'],
-      color: colorFromString(map['color']),
-    );
+    if (map['id'] == null) throw Exception('No id passed on to Tag Model');
+    return TagModel(map['id']);
   }
 }

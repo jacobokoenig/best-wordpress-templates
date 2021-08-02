@@ -1,8 +1,6 @@
-import 'package:best_wordpress_sites/core/constants/constants.dart';
 import 'package:best_wordpress_sites/home/data/models/tag_model.dart';
 import 'package:best_wordpress_sites/home/data/models/template_model.dart';
 import 'package:best_wordpress_sites/home/domain/entities/template.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -12,7 +10,8 @@ void main() {
     thumbnailUrl: 'thumbUrl',
     title: 'title',
     description: 'description',
-    tags: [TagModel(id: 'id', title: 'title', color: purple)],
+    owner: 'divi',
+    tags: [TagModel('id')],
   );
 
   test(
@@ -34,9 +33,8 @@ void main() {
           'thumbnailUrl': 'thumbUrl',
           'title': 'title',
           'description': 'description',
-          'tags': [
-            {'id': 'id', 'title': 'title', 'color': 'purple'}
-          ],
+          'owner_id': 'divi',
+          'tags': ['id'],
         };
 
         // act

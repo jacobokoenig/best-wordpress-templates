@@ -26,7 +26,8 @@ void main() {
       thumbnailUrl: 'thumbUrl',
       title: 'title',
       description: 'description',
-      tags: [Tag(id: 'id', title: 'title', color: Colors.white)],
+      owner: 'divi',
+      tags: [Tag('id')],
     ),
   ];
 
