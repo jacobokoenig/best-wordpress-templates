@@ -20,6 +20,8 @@ dependencies:
   flutter_bloc: ^7.1.0
   # Value equality
   equatable: ^2.0.3
+  # Utilities
+  bmcommons: ^0.0.1+32
 
 dev_dependencies:
   flutter_test:

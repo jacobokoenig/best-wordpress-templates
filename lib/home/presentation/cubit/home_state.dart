@@ -9,11 +9,19 @@ abstract class HomeState extends Equatable {
 
 class HomeInitial extends HomeState {}
 
+class HomeLoading extends HomeState {}
+
 class HomeLoaded extends HomeState {
   final List<Template> templates;
+  final List<Tag> tags;
+  final Tag? selectedFilter;
 
-  HomeLoaded({required this.templates});
+  HomeLoaded({
+    required this.templates,
+    required this.tags,
+    this.selectedFilter,
+  });
 
   @override
-  List<Object> get props => [templates];
+  List<Object> get props => [templates, tags];
 }

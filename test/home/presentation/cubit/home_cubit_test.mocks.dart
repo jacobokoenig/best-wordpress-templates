@@ -4,9 +4,12 @@
 
 import 'dart:async' as _i4;
 
+import 'package:best_wordpress_sites/home/domain/entities/tag.dart' as _i7;
 import 'package:best_wordpress_sites/home/domain/entities/template.dart' as _i5;
 import 'package:best_wordpress_sites/home/domain/repositories/templates_repository.dart'
     as _i2;
+import 'package:best_wordpress_sites/home/domain/usecases/complete_tags.dart'
+    as _i6;
 import 'package:best_wordpress_sites/home/domain/usecases/get_templates.dart'
     as _i3;
 import 'package:mockito/mockito.dart' as _i1;
@@ -44,6 +47,26 @@ class MockGetTemplates extends _i1.Mock implements _i3.GetTemplates {
       (super.noSuchMethod(Invocation.method(#call, []),
               returnValue: Future<List<_i5.Template>>.value(<_i5.Template>[]))
           as _i4.Future<List<_i5.Template>>);
+  @override
+  String toString() => super.toString();
+}
+
+/// A class which mocks [CompleteTags].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockCompleteTags extends _i1.Mock implements _i6.CompleteTags {
+  MockCompleteTags() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  List<_i7.Tag> get tags =>
+      (super.noSuchMethod(Invocation.getter(#tags), returnValue: <_i7.Tag>[])
+          as List<_i7.Tag>);
+  @override
+  List<_i7.Tag> call(List<_i7.Tag>? incompleteTags) =>
+      (super.noSuchMethod(Invocation.method(#call, [incompleteTags]),
+          returnValue: <_i7.Tag>[]) as List<_i7.Tag>);
   @override
   String toString() => super.toString();
 }
