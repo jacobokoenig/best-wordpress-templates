@@ -56,7 +56,11 @@ void main() {
     cubit = HomeCubit(getTemplates: mockGetTemplates, completeTags: mockCompleteTags);
 
     HomeLoaded loadedState = HomeLoaded(
-        templates: tTemplatesCompleted, tags: tagTaxonomy, selectedFilter: tagTaxonomy[0]);
+      templates: tTemplatesCompleted,
+      tags: [Tag('all', title: 'All', color: black), ...tagTaxonomy],
+      selectedFilter: tagTaxonomy[0],
+    );
+
     HomeLoading loadingState = HomeLoading();
 
     expect(cubit.state, loadingState);

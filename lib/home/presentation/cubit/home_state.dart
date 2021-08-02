@@ -14,12 +14,12 @@ class HomeLoading extends HomeState {}
 class HomeLoaded extends HomeState {
   final List<Template> templates;
   final List<Tag> tags;
-  final Tag? selectedFilter;
+  final Tag selectedFilter;
 
   HomeLoaded({
     required this.templates,
     required this.tags,
-    this.selectedFilter,
+    required this.selectedFilter,
   });
 
   @override

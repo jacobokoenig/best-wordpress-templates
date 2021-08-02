@@ -1,3 +1,4 @@
+import 'package:best_wordpress_sites/core/constants/constants.dart';
 import 'package:best_wordpress_sites/home/data/fixtures/tag_taxonomy.dart';
 import 'package:best_wordpress_sites/home/domain/entities/tag.dart';
 import 'package:best_wordpress_sites/home/domain/entities/template.dart';
@@ -20,6 +21,12 @@ class HomeCubit extends Cubit<HomeState> {
     emit(HomeLoading());
     List<Template> templates = await getTemplates();
     templates = templates.map((e) => e.copyWith(tags: completeTags(tagTaxonomy))).toList();
-    emit(HomeLoaded(templates: templates, tags: tagTaxonomy));
+    emit(
+      HomeLoaded(
+        templates: templates,
+        tags: [allTag, ...tagTaxonomy],
+        selectedFilter: allTag,
+      ),
+    );
   }
 }

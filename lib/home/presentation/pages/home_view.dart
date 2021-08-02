@@ -3,7 +3,6 @@ import 'package:best_wordpress_sites/core/widgets/text/body_1.dart';
 import 'package:best_wordpress_sites/core/widgets/text/heading_2.dart';
 import 'package:best_wordpress_sites/core/widgets/text/title.dart';
 import 'package:best_wordpress_sites/get_it.dart';
-import 'package:best_wordpress_sites/home/data/fixtures/tag_taxonomy.dart';
 import 'package:best_wordpress_sites/home/presentation/cubit/home_cubit.dart';
 import 'package:bmcommons/bmcommons.dart';
 import 'package:flutter/material.dart';
@@ -35,8 +34,10 @@ class HomeView extends StatelessWidget {
         children: [
           Container(
             padding: Spacing.standardPadding,
-            height: 800,
-            color: lightGray,
+            decoration: BoxDecoration(
+              color: lightGray,
+              border: Border.all(color: Colors.grey[200]!, width: 1),
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -62,32 +63,35 @@ class HomeView extends StatelessWidget {
                 VerticalSpacing(),
                 Center(
                   child: Container(
-                      constraints: BoxConstraints(maxWidth: 800),
-                      child: Wrap(
-                        children: state.tags
-                            .map(
-                              (e) => Chip(
-                                backgroundColor: state.selectedFilter == e ? e.color : lightGray,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5),
-                                  side: BorderSide(
-                                    color:
-                                        state.selectedFilter == e ? lightGray : (e.color ?? black),
-                                    width: 2,
-                                  ),
-                                ),
-                                label: Text(
-                                  e.title?.toUpperCase() ?? '',
-                                  style: body2.copyWith(
-                                    fontWeight: FontWeight.w600,
-                                    color: state.selectedFilter == e ? lightGray : e.color,
-                                  ),
+                    constraints: BoxConstraints(maxWidth: 800),
+                    child: Wrap(
+                      spacing: 12,
+                      runSpacing: 12,
+                      children: state.tags
+                          .map(
+                            (e) => Chip(
+                              backgroundColor: state.selectedFilter == e ? e.color : lightGray,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                                side: BorderSide(
+                                  color: e.color ?? black,
+                                  width: 2,
                                 ),
                               ),
-                            )
-                            .toList(),
-                      )),
+                              label: Text(
+                                e.title?.toUpperCase() ?? '',
+                                style: body2.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                  color: state.selectedFilter == e ? lightGray : e.color,
+                                ),
+                              ),
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  ),
                 ),
+                VerticalSpacing(100),
               ],
             ),
           ),
