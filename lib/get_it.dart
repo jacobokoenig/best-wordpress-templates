@@ -9,6 +9,9 @@ import 'package:best_wordpress_sites/home/presentation/cubit/home_cubit.dart';
 final sl = GetIt.instance..allowReassignment = true;
 
 init() async {
+  //Fixtures
+  sl.registerFactory(() => tagTaxonomy);
+
   //DataSources
   sl.registerFactory(() => TemplatesFixturesDatasource());
 
@@ -17,8 +20,10 @@ init() async {
 
   //Usecases
   sl.registerFactory(() => GetTemplates(sl<TemplatesRepositoryImpl>()));
-  sl.registerFactory(() => CompleteTags(tagTaxonomy));
+  sl.registerFactory(() => CompleteTags(sl()));
 
   //Cubits
-  sl.registerLazySingleton(() => HomeCubit(getTemplates: sl(), completeTags: sl()));
+  sl.registerLazySingleton(
+    () => HomeCubit(getTemplates: sl(), completeTags: sl()),
+  );
 }

@@ -20,6 +20,9 @@ void main() {
   final incompleteTags = [Tag('id')];
   final completeTags = [Tag('id', title: 'Id', color: green)];
 
+  final incompleteTags2 = [Tag('id2')];
+  final completeTags2 = [Tag('id2', title: 'Id2', color: purple)];
+
   final tTemplates = [
     Template(
       id: 'id',
@@ -29,6 +32,15 @@ void main() {
       description: 'description',
       owner: 'divi',
       tags: incompleteTags,
+    ),
+    Template(
+      id: 'id2',
+      templateUrl: 'url2',
+      thumbnailUrl: 'thumbUrl2',
+      title: 'title2',
+      description: 'description2',
+      owner: 'divi2',
+      tags: incompleteTags2,
     ),
   ];
 
@@ -42,6 +54,15 @@ void main() {
       owner: 'divi',
       tags: completeTags,
     ),
+    Template(
+      id: 'id2',
+      templateUrl: 'url2',
+      thumbnailUrl: 'thumbUrl2',
+      title: 'title2',
+      description: 'description2',
+      owner: 'divi2',
+      tags: completeTags2,
+    ),
   ];
 
   setUp(() {
@@ -49,24 +70,80 @@ void main() {
     mockGetTemplates = MockGetTemplates();
 
     when(mockGetTemplates()).thenAnswer((_) async => tTemplates);
-    when(mockCompleteTags(any)).thenAnswer((_) => completeTags);
+    when(mockCompleteTags(incompleteTags)).thenAnswer((_) => completeTags);
+    when(mockCompleteTags(incompleteTags2)).thenAnswer((_) => completeTags2);
   });
 
-  test('HomeCubit', () async {
-    cubit = HomeCubit(getTemplates: mockGetTemplates, completeTags: mockCompleteTags);
-
+  group('HomeCubit', () {
     HomeLoaded loadedState = HomeLoaded(
       templates: tTemplatesCompleted,
-      tags: [Tag('all', title: 'All', color: black), ...tagTaxonomy],
-      selectedFilter: tagTaxonomy[0],
+      filteredTemplates: tTemplatesCompleted,
+      tags: [allTag, ...tagTaxonomy],
+      selectedFilter: allTag,
     );
 
     HomeLoading loadingState = HomeLoading();
 
-    expect(cubit.state, loadingState);
+    test('should return HomeLoaded when cubit is created', () async {
+      cubit = HomeCubit(getTemplates: mockGetTemplates, completeTags: mockCompleteTags);
 
-    await expectLater(cubit.stream, emitsInOrder([loadedState]));
+      expect(cubit.state, loadingState);
 
-    expect(cubit.state, loadedState);
+      await expectLater(cubit.stream, emitsInOrder([loadedState]));
+
+      expect(cubit.state, loadedState);
+    });
+  });
+
+  test('should return all templates when "all" filter is selected', () async {
+    cubit = HomeCubit(getTemplates: mockGetTemplates, completeTags: mockCompleteTags);
+
+//The following method just waits until initialization is done before calling filter
+    await expectLater(cubit.stream, emitsInOrder([isA<HomeLoaded>()]));
+
+    Tag selectedFilter = allTag; // Tag('all', title: 'Id', color: black)
+
+    cubit.filter(selectedFilter);
+
+    expect(
+      cubit.state,
+      HomeLoaded(
+        templates: tTemplatesCompleted,
+        filteredTemplates: tTemplatesCompleted,
+        tags: [allTag, ...tagTaxonomy],
+        selectedFilter: selectedFilter,
+      ),
+    );
+  });
+
+  test('should return filtered templates when its filter is selected', () async {
+    cubit = HomeCubit(getTemplates: mockGetTemplates, completeTags: mockCompleteTags);
+
+    //The following method just waits until initialization is done before calling filter
+    await expectLater(cubit.stream, emitsInOrder([isA<HomeLoaded>()]));
+
+    Tag selectedFilter = Tag('id', title: 'Id', color: green);
+
+    cubit.filter(selectedFilter);
+
+    expect(
+      cubit.state,
+      HomeLoaded(
+        templates: tTemplatesCompleted,
+        filteredTemplates: [
+          Template(
+            id: 'id',
+            templateUrl: 'url',
+            thumbnailUrl: 'thumbUrl',
+            title: 'title',
+            description: 'description',
+            owner: 'divi',
+            tags: completeTags,
+          ),
+        ],
+        tags: [allTag, ...tagTaxonomy],
+        selectedFilter: selectedFilter,
+      ),
+    );
   });
 }
