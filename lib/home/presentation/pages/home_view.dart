@@ -1,6 +1,7 @@
 import 'package:best_wordpress_sites/core/constants/constants.dart';
 import 'package:best_wordpress_sites/get_it.dart';
 import 'package:best_wordpress_sites/home/presentation/cubit/home_cubit.dart';
+import 'package:best_wordpress_sites/home/presentation/widgets/footer_view.dart';
 import 'package:best_wordpress_sites/home/presentation/widgets/header_view.dart';
 import 'package:best_wordpress_sites/home/presentation/widgets/templates_grid/templates_grid.dart';
 import 'package:bmcommons/bmcommons.dart';
@@ -15,6 +16,7 @@ class HomeView extends StatelessWidget {
     return BlocProvider(
       create: (context) => _cubit,
       child: Scaffold(
+        backgroundColor: lightGray.withOpacity(0.5),
         body: BlocBuilder<HomeCubit, HomeState>(
           builder: (context, state) {
             if (state is HomeLoading) return _buildLoadingScreen();
@@ -35,7 +37,8 @@ class HomeView extends StatelessWidget {
           Transform.translate(
             offset: Offset(0, -120),
             child: TemplatesGrid(state: state),
-          )
+          ),
+          FooterView(),
         ],
       ),
     );
