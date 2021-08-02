@@ -3,10 +3,15 @@ import 'package:flutter/material.dart';
 
 class Heading1 extends StatelessWidget {
   final String text;
+  final int? maxLines;
 
-  const Heading1(this.text, {Key? key}) : super(key: key);
+  const Heading1(this.text, {Key? key, this.maxLines}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Text(text, style: heading1);
+    return Text(
+      text,
+      style: heading1,
+      maxLines: maxLines,
+    );
   }
 }

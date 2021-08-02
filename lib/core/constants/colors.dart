@@ -6,6 +6,7 @@ const Color purple = Color(0xFF9B51DF);
 const Color blue = Color(0xFF2879A7);
 const Color white = Colors.white;
 const Color green = Color(0xFF0B843E);
+const Color orange = Color(0xFFEA5329);
 
 Color colorFromString(String? str) {
   if (str == null) return Colors.yellow;

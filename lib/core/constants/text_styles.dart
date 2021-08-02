@@ -9,7 +9,7 @@ const TextStyle title = TextStyle(
 const TextStyle heading1 = TextStyle(
   fontFamily: 'OpenSans',
   fontWeight: FontWeight.w900,
-  fontSize: 34,
+  fontSize: 28,
   color: black,
 );
 const TextStyle heading2 = TextStyle(

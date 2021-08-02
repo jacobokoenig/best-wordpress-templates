@@ -5,6 +5,7 @@ import 'package:best_wordpress_sites/core/widgets/text/title.dart';
 import 'package:best_wordpress_sites/home/presentation/cubit/home_cubit.dart';
 import 'package:bmcommons/bmcommons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HeaderView extends StatelessWidget {
   final HomeLoaded state;
@@ -50,10 +51,11 @@ class HeaderView extends StatelessWidget {
                 runSpacing: 12,
                 children: state.tags
                     .map(
-                      (e) => Chip(
+                      (e) => ActionChip(
+                        onPressed: () => BlocProvider.of<HomeCubit>(context).filter(e),
                         backgroundColor: state.selectedFilter == e ? e.color : lightGray,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
+                          borderRadius: BorderRadius.circular(6),
                           side: BorderSide(
                             color: e.color ?? black,
                             width: 2,

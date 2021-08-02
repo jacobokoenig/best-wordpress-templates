@@ -7,4 +7,7 @@ Tag allTag = Tag('all', title: 'All', color: black);
 
 List<Tag> tagTaxonomy = [
   Tag('creative', title: 'Creative', color: purple),
+  Tag('animated', title: 'Animated', color: green),
+  Tag('elegant', title: 'Elegant', color: blue),
+  Tag('traditional', title: 'Traditional', color: orange),
 ];
