@@ -1,3 +1,5 @@
+import 'package:bmcommons/bmcommons.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -12,7 +14,20 @@ class Badges extends StatelessWidget {
           },
           child: Image.asset(
             'assets/icons/bmc-button.png',
-            height: 50,
+            width: 200,
+          ),
+        ),
+        VerticalSpacing(8),
+        InkWell(
+          onTap: () {
+            launch(
+              'https://www.producthunt.com/posts/untheme?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-untheme',
+            );
+          },
+          child: Image.asset(
+            'assets/icons/ph-button.png',
+            // height: 54,
+            width: 200,
           ),
         ),
       ],

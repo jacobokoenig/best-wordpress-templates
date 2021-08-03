@@ -38,6 +38,7 @@ class FooterView extends StatelessWidget {
                 Body1(
                   '📱 +1 (305) 770-8249',
                 ),
+                VerticalSpacing(60),
               ],
             ),
           ),
@@ -55,6 +56,7 @@ class FooterView extends StatelessWidget {
                 Body1(
                   'untheme is a non for profit made just for fun. If you found it useful, show some love with the "Buy me coffee" button 😁',
                 ),
+                VerticalSpacing(60),
               ],
             ),
           ),
