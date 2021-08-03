@@ -14,6 +14,32 @@ List<Map<String, dynamic>> templatesData = [
         'https://firebasestorage.googleapis.com/v0/b/wordpress-templates.appspot.com/o/influencer-landing-page-533x1879.jpeg?alt=media&token=1181b44f-72d4-424b-bc3d-555949712fbb',
   },
   {
+    'id': 'mary',
+    'title': 'Mary in ads',
+    'description':
+        'A fun template that animates from slide to slide. Exciting and rebellious for the true outlier',
+    'owner_id': 'slider_revolution',
+    'tags': [
+      'animated',
+    ],
+    'templateUrl': 'https://www.sliderrevolution.com/templates/modern-portfolio-website/',
+    'thumbnailUrl':
+        'https://firebasestorage.googleapis.com/v0/b/wordpress-templates.appspot.com/o/Screenshot%202021-08-02%20at%2020.52.45.png?alt=media&token=14720a58-5fdc-4fc1-b598-3f44cc73c380',
+  },
+  {
+    'id': 'adios',
+    'title': 'Adios, Baby!',
+    'description': 'A beautiful template for beauty brands. Show your colors!',
+    'owner_id': 'adios',
+    'tags': [
+      'creative',
+    ],
+    'templateUrl':
+        'https://preview.themeforest.net/item/adios-portfolio-wordpress-theme-for-artists-agencies-freelancers-creatives/full_screen_preview/16982807?ref=cirvitis&clickthrough_id&redirect_back=true',
+    'thumbnailUrl':
+        'https://firebasestorage.googleapis.com/v0/b/wordpress-templates.appspot.com/o/Screenshot%202021-08-02%20at%2021.03.51.png?alt=media&token=a2f95e1e-6a55-4df5-ada7-ed2412c0f7f9',
+  },
+  {
     'id': 'animated',
     'title': 'Animated',
     'description':
@@ -39,6 +65,18 @@ List<Map<String, dynamic>> templatesData = [
     'templateUrl': 'https://www.elegantthemes.com/layouts/business/bank-landing-page/live-demo',
     'thumbnailUrl':
         'https://firebasestorage.googleapis.com/v0/b/wordpress-templates.appspot.com/o/screenshot-www.elegantthemes.com-2021.08.02-13_07_41.png?alt=media&token=dbb1da9d-f200-4dd8-b6d6-080e201abd57',
+  },
+  {
+    'id': 'emi',
+    'title': 'Femme Fatale',
+    'description': 'An impactful template for businesses with simple but bold ideas',
+    'owner_id': 'bario',
+    'tags': [
+      'elegant',
+    ],
+    'templateUrl': 'http://clapat.ro/themes/bario-wordpress/',
+    'thumbnailUrl':
+        'https://firebasestorage.googleapis.com/v0/b/wordpress-templates.appspot.com/o/Screenshot%202021-08-02%20at%2022.14.26.png?alt=media&token=a5a695eb-bddc-4ed4-8728-3e9eaed0820f',
   },
   {
     'id': 'pharma',
@@ -67,7 +105,19 @@ List<Map<String, dynamic>> templatesData = [
         'https://firebasestorage.googleapis.com/v0/b/wordpress-templates.appspot.com/o/screenshot-www.elegantthemes.com-2021.08.02-13_14_26.png?alt=media&token=3c49450f-1dc6-4fb8-9342-5f7f36ffcdc7',
   },
   {
-    'id': 'hired',
+    'id': 'bulb',
+    'title': 'Bulb Fiction',
+    'description': 'The minimal way to sell product, when the product\'s image sells itself.',
+    'owner_id': 'metis',
+    'tags': [
+      'elegant',
+    ],
+    'templateUrl': 'http://demo.vegatheme.com/metis/#0',
+    'thumbnailUrl':
+        'https://firebasestorage.googleapis.com/v0/b/wordpress-templates.appspot.com/o/Screenshot%202021-08-02%20at%2022.16.21.png?alt=media&token=6e6eeb6a-fcc2-46fb-ae85-147581ec3067',
+  },
+  {
+    'id': 'wine',
     'title': 'Mexican Wine',
     'description':
         'An elegant, product focused template good for showcasing businesses in a sharp and professional way.',
@@ -79,6 +129,18 @@ List<Map<String, dynamic>> templatesData = [
         'https://www.elegantthemes.com/layouts/fashion-beauty/cosmetics-shop-landing-page/live-demo',
     'thumbnailUrl':
         'https://firebasestorage.googleapis.com/v0/b/wordpress-templates.appspot.com/o/Screenshot%202021-08-02%20at%2013.38.20.png?alt=media&token=68ad0703-568c-42af-9bcb-83f8054ccb30',
+  },
+  {
+    'id': 'portfolio',
+    'title': 'Maximalist Portfolio',
+    'description': 'Showcase your portfolio with big, in-your-face, images.',
+    'owner_id': 'pirenko',
+    'tags': [
+      'creative',
+    ],
+    'templateUrl': 'https://www.pirenko.com/fount-artist/',
+    'thumbnailUrl':
+        'https://firebasestorage.googleapis.com/v0/b/wordpress-templates.appspot.com/o/Screenshot%202021-08-02%20at%2022.31.35.png?alt=media&token=4a0a8390-ff83-40af-939c-153ed8be8078',
   },
   {
     'id': 'agency',
@@ -93,6 +155,18 @@ List<Map<String, dynamic>> templatesData = [
         'https://www.elegantthemes.com/layouts/art-design/web-agency-landing-page/live-demo',
     'thumbnailUrl':
         'https://firebasestorage.googleapis.com/v0/b/wordpress-templates.appspot.com/o/Screenshot%202021-08-02%20at%2015.44.01.png?alt=media&token=e3fc5e7a-beea-4630-928a-b48c30d02a01',
+  },
+  {
+    'id': 'salsa',
+    'title': 'Salsa',
+    'description': 'The perfect template for event driven websites.',
+    'owner_id': 'pirouett',
+    'tags': [
+      'traditional',
+    ],
+    'templateUrl': 'https://demo.curlythemes.com/pirouette/classes/salsa-and-merengue/',
+    'thumbnailUrl':
+        'https://firebasestorage.googleapis.com/v0/b/wordpress-templates.appspot.com/o/Screenshot%202021-08-02%20at%2022.30.14.png?alt=media&token=379829dc-182a-429b-bbde-d793834b9de4',
   },
   {
     'id': 'night_day',
@@ -133,5 +207,18 @@ List<Map<String, dynamic>> templatesData = [
     'templateUrl': 'https://fluid.qodeinteractive.com/product-presentation/',
     'thumbnailUrl':
         'https://firebasestorage.googleapis.com/v0/b/wordpress-templates.appspot.com/o/Screenshot%202021-08-02%20at%2015.51.22.png?alt=media&token=8ba80c23-bcda-413b-bb08-ae0062485489',
+  },
+  {
+    'id': 'beautiful',
+    'title': 'Beautiful Cliche',
+    'description': 'Show your product with a minimal approach, and maximum illustration.',
+    'owner_id': 'divi',
+    'tags': [
+      'creative',
+    ],
+    'templateUrl':
+        'https://www.elegantthemes.com/layouts/fashion-beauty/beauty-product-landing-page/live-demo',
+    'thumbnailUrl':
+        'https://firebasestorage.googleapis.com/v0/b/wordpress-templates.appspot.com/o/Screenshot%202021-08-02%20at%2021.00.26.png?alt=media&token=281b7532-6294-4f73-80f5-009d33bf1642',
   },
 ];

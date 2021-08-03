@@ -32,7 +32,7 @@ class FooterView extends StatelessWidget {
                 ),
                 VerticalSpacing(),
                 Body1(
-                  '✉️ jacobokoenig@gmail.com',
+                  '✉️ jacobo@binarymango.com',
                 ),
                 VerticalSpacing(8),
                 Body1(
