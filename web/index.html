@@ -25,8 +25,25 @@
 
   <title>untheme</title>
   <link rel="manifest" href="manifest.json">
+
 </head>
 <body>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+  <script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyCr7F4T06i4c2MEWTlWvVuKJLb4pmj99_M",
+        authDomain: "wordpress-templates.firebaseapp.com",
+        projectId: "wordpress-templates",
+        storageBucket: "wordpress-templates.appspot.com",
+        messagingSenderId: "422888858798",
+        appId: "1:422888858798:web:9a0d6e16386303db21f93f",
+        measurementId: "G-1L6MZJ8LST"
+      };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+  </script>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->

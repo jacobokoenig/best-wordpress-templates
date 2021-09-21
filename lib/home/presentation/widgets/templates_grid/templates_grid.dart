@@ -1,5 +1,7 @@
 import 'package:best_wordpress_sites/core/constants/constants.dart';
 import 'package:best_wordpress_sites/core/widgets/text/body_1.dart';
+import 'package:best_wordpress_sites/core/widgets/text/body_2.dart';
+import 'package:best_wordpress_sites/core/widgets/text/heading_1.dart';
 import 'package:best_wordpress_sites/core/widgets/text/heading_2.dart';
 import 'package:best_wordpress_sites/home/presentation/cubit/home_cubit.dart';
 import 'package:bmcommons/bmcommons.dart';
@@ -71,7 +73,10 @@ class TemplatesGrid extends StatelessWidget {
                               ),
                             ),
                             VerticalSpacing(),
-                            Heading2(e.title),
+                            Heading2(
+                              e.title,
+                              fontSize: 26,
+                            ),
                             if (e.tags.length > 0)
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,7 +98,7 @@ class TemplatesGrid extends StatelessWidget {
                                 ],
                               ),
                             VerticalSpacing(),
-                            Body1(e.description),
+                            Body2(e.description),
                           ],
                         ),
                       ),

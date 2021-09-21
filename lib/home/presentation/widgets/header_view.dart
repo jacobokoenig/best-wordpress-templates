@@ -58,7 +58,7 @@ class HeaderView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(6),
                           side: BorderSide(
                             color: e.color ?? black,
-                            width: 2,
+                            width: 1.5,
                           ),
                         ),
                         label: Text(

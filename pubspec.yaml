@@ -14,6 +14,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Firebase
+  firebase_core: ^1.4.0
+  firebase_analytics: ^8.2.0
   # Service locator
   get_it: ^7.2.0
   # Bloc for state management

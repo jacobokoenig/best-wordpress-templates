@@ -31,6 +31,6 @@ const TextStyle body1 = TextStyle(
 );
 const TextStyle body2 = TextStyle(
   fontFamily: 'OpenSans',
-  fontSize: 14,
+  fontSize: 16,
   color: black,
 );

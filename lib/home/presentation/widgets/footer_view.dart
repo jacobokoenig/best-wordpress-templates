@@ -54,7 +54,7 @@ class FooterView extends StatelessWidget {
                 ),
                 VerticalSpacing(),
                 Body1(
-                  'untheme is a non for profit made just for fun. If you found it useful, show some love with the "Buy me coffee" button 😁',
+                  'untheme is an open source curation of the best wordpress templates around. If you found it useful, show some love with the "Buy me coffee" button 😁',
                 ),
                 VerticalSpacing(60),
               ],

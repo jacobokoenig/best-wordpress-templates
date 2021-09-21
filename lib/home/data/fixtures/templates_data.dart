@@ -14,6 +14,19 @@ List<Map<String, dynamic>> templatesData = [
         'https://firebasestorage.googleapis.com/v0/b/wordpress-templates.appspot.com/o/influencer-landing-page-533x1879.jpeg?alt=media&token=1181b44f-72d4-424b-bc3d-555949712fbb',
   },
   {
+    'id': 'blocks',
+    'title': 'Story',
+    'description': 'A minimalist and elegant way to tell your story',
+    'owner_id': 'slider_revolution',
+    'tags': [
+      'animated',
+      'elegant',
+    ],
+    'templateUrl': 'https://www.sliderrevolution.com/templates/story-blocks/',
+    'thumbnailUrl':
+        'https://firebasestorage.googleapis.com/v0/b/wordpress-templates.appspot.com/o/Screenshot%202021-09-21%20at%2008.57.35.png?alt=media&token=1663d32a-21c2-4489-a33a-7d6a52a8ff6b',
+  },
+  {
     'id': 'mary',
     'title': 'Mary in ads',
     'description':
